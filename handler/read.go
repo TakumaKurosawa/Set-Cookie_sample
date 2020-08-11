@@ -13,6 +13,7 @@ func ReadCookie(c echo.Context) error {
 	if err != nil {
 		fmt.Println("set a new cookie.")
 
+		// Cookieにデータがセットされていない状態でリクエストがきた場合はデフォルトの値をSetする。
 		value := "default value"
 		cookie := new(http.Cookie)
 		cookie.Name = "input"
